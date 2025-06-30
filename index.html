@@ -13,6 +13,7 @@
             font-family: 'Inter', sans-serif;
             background-color: #f0f4f8; /* Light background */
             color: #333;
+            scroll-behavior: smooth; /* Smooth scrolling for anchor links */
         }
         /* Custom styles for active navigation link */
         .nav-link.active {
@@ -34,22 +35,25 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <!-- Header & Navigation -->
-    <header class="bg-white shadow-md py-4">
+    <header class="bg-white shadow-md py-4 sticky top-0 z-10">
         <nav class="container mx-auto px-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-gray-800">
+            <a href="index.html" class="text-2xl font-bold text-gray-800" onclick="trackNavigationClick(event, 'home', 'index.html')">
                 Your Agency
             </a>
             <ul class="flex space-x-6">
-                <li><a href="index.html" class="nav-link text-gray-600 hover:text-blue-600 py-2 rounded-md transition duration-300 ease-in-out font-medium">Home</a></li>
-                <li><a href="services.html" class="nav-link text-gray-600 hover:text-blue-600 py-2 rounded-md transition duration-300 ease-in-out font-medium">Services</a></li>
-                <li><a href="contact.html" class="nav-link text-gray-600 hover:text-blue-600 py-2 rounded-md transition duration-300 ease-in-out font-medium">Contact Us</a></li>
+                <li><a href="#hero" class="nav-link text-gray-600 hover:text-blue-600 py-2 rounded-md transition duration-300 ease-in-out font-medium" onclick="trackNavigationClick(event, 'home_section', 'hero')">Home</a></li>
+                <li><a href="#about-us" class="nav-link text-gray-600 hover:text-blue-600 py-2 rounded-md transition duration-300 ease-in-out font-medium" onclick="trackNavigationClick(event, 'home_section', 'about-us')">About Us</a></li>
+                <li><a href="#our-approach" class="nav-link text-gray-600 hover:text-blue-600 py-2 rounded-md transition duration-300 ease-in-out font-medium" onclick="trackNavigationClick(event, 'home_section', 'our-approach')">Our Approach</a></li>
+                <li><a href="services.html" class="nav-link text-gray-600 hover:text-blue-600 py-2 rounded-md transition duration-300 ease-in-out font-medium" onclick="trackNavigationClick(event, 'external_page', 'services.html')">Services</a></li>
+                <li><a href="contact.html" class="nav-link text-gray-600 hover:text-blue-600 py-2 rounded-md transition duration-300 ease-in-out font-medium" onclick="trackNavigationClick(event, 'external_page', 'contact.html')">Contact Us</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Main Content Area - Landing Page Section -->
+    <!-- Main Content Area -->
     <main class="flex-grow">
-        <section id="landing-page" class="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-20 md:py-32 flex items-center justify-center text-center">
+        <!-- Hero Section (formerly Landing Page Section) -->
+        <section id="hero" class="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-20 md:py-32 flex items-center justify-center text-center min-h-screen-75">
             <div class="container mx-auto px-4">
                 <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 animate-fade-in-down">
                     Ignite Your Digital Presence
@@ -57,10 +61,59 @@
                 <p class="text-lg md:text-xl mb-10 max-w-2xl mx-auto opacity-90 animate-fade-in-up">
                     We're a full-service digital marketing agency dedicated to helping businesses thrive online.
                 </p>
-                <a href="services.html" class="bg-white text-blue-600 px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-gray-100 transition duration-300 ease-in-out transform hover:scale-105 cta-button"
+                <a href="#about-us" class="bg-white text-blue-600 px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-gray-100 transition duration-300 ease-in-out transform hover:scale-105 cta-button"
                    onclick="trackClick('hero_cta_click', 'Learn More Button', event);">
-                    Learn More About Our Services
+                    Learn More About Us
                 </a>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about-us" class="py-20 px-4 bg-gray-100">
+            <div class="container mx-auto max-w-4xl text-center">
+                <h2 class="text-4xl font-bold text-gray-800 mb-8">About Our Agency</h2>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    Founded with a passion for digital innovation, Your Agency is a team of experienced marketers, creative designers, and tech enthusiasts. We believe that every business, regardless of size, deserves a powerful online voice. Our mission is to transform your digital challenges into success stories through tailored strategies and cutting-edge execution.
+                </p>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    We pride ourselves on transparency, measurable results, and building long-lasting partnerships with our clients. Your success is our success.
+                </p>
+                <div class="mt-10">
+                    <a href="contact.html" class="bg-blue-600 text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-blue-700 transition duration-300 ease-in-out transform hover:scale-105 cta-button"
+                       onclick="trackClick('about_us_cta_click', 'Contact Us from About Us', event);">
+                        Contact Us Today
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Approach Section -->
+        <section id="our-approach" class="py-20 px-4 bg-white">
+            <div class="container mx-auto max-w-5xl">
+                <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Our Proven Approach</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <div class="text-center p-6 rounded-xl shadow-md border border-gray-200">
+                        <div class="text-5xl text-blue-500 mb-4">&#128269;</div> <!-- Magnifying Glass Emoji -->
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-3">1. Discover</h3>
+                        <p class="text-gray-600">We start by deeply understanding your business, goals, and target audience through in-depth research and analysis.</p>
+                    </div>
+                    <div class="text-center p-6 rounded-xl shadow-md border border-gray-200">
+                        <div class="text-5xl text-purple-500 mb-4">&#128161;</div> <!-- Lightbulb Emoji -->
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-3">2. Strategize</h3>
+                        <p class="text-gray-600">Based on our discoveries, we craft a bespoke digital marketing strategy designed for maximum impact and ROI.</p>
+                    </div>
+                    <div class="text-center p-6 rounded-xl shadow-md border border-gray-200">
+                        <div class="text-5xl text-green-500 mb-4">&#128640;</div> <!-- Rocket Emoji -->
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-3">3. Execute & Optimize</h3>
+                        <p class="text-gray-600">Our team brings the strategy to life, continuously monitoring performance and optimizing campaigns for peak results.</p>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <a href="services.html" class="bg-purple-600 text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-purple-700 transition duration-300 ease-in-out transform hover:scale-105 cta-button"
+                       onclick="trackClick('approach_cta_click', 'View Our Services from Approach', event);">
+                        Explore Our Services
+                    </a>
+                </div>
             </div>
         </section>
     </main>
@@ -76,25 +129,76 @@
         // Data Layer is defined by GTM snippet, but good to have a fallback
         window.dataLayer = window.dataLayer || [];
 
-        // Function to set the active navigation link based on the current page
+        // Function to set the active navigation link based on the current page/section
         function setActiveNavLink() {
             const path = window.location.pathname;
             const filename = path.substring(path.lastIndexOf('/') + 1);
             const navLinks = document.querySelectorAll('.nav-link');
+            const currentHash = window.location.hash;
 
             navLinks.forEach(link => {
                 link.classList.remove('active');
-                if (link.getAttribute('href') === filename || (filename === '' && link.getAttribute('href') === 'index.html')) {
+                const linkHref = link.getAttribute('href');
+
+                // Check for external page links (e.g., services.html)
+                if (linkHref.endsWith(filename) && filename !== '') {
                     link.classList.add('active');
+                } else if (filename === '' && linkHref === 'index.html') { // Special case for index.html as default
+                    link.classList.add('active');
+                }
+                // Check for internal anchor links if on index.html
+                if (filename === 'index.html' || filename === '') {
+                    if (currentHash === linkHref) {
+                        link.classList.add('active');
+                    } else if (currentHash === '' && linkHref.includes('#hero')) { // Default to hero if no hash
+                        link.classList.add('active');
+                    }
                 }
             });
         }
 
-        // Initialize active nav link on load
-        document.addEventListener('DOMContentLoaded', setActiveNavLink);
-
-
         // --- GTM Tracking Functions ---
+
+        /**
+         * Tracks navigation clicks, differentiating between internal sections and external pages.
+         * @param {Event} event - The click event.
+         * @param {string} navType - 'home_section' for internal, 'external_page' for other HTML files.
+         * @param {string} targetIdOrPath - The ID of the section (e.g., 'about-us') or the path to the page (e.g., 'services.html').
+         */
+        function trackNavigationClick(event, navType, targetIdOrPath) {
+            // No preventDefault here if it's an external page link, let browser handle navigation
+            // For internal anchor links, 'smooth-scroll' will be handled by CSS or custom JS if needed.
+
+            let pagePath = window.location.pathname;
+            let pageTitle = document.title;
+            let eventLabel = targetIdOrPath;
+
+            if (navType === 'home_section') {
+                pagePath = `/index.html#${targetIdOrPath}`;
+                pageTitle = `Home Page - ${targetIdOrPath.replace('-', ' ').split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}`;
+                eventLabel = `Internal Nav: ${targetIdOrPath}`;
+                // Manually scroll into view for smoother experience if not using CSS scroll-behavior
+                const targetElement = document.getElementById(targetIdOrPath);
+                if (targetElement) {
+                    event.preventDefault(); // Prevent default jump to allow smooth scroll or custom handling
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            } else if (navType === 'external_page') {
+                pagePath = `/${targetIdOrPath}`; // e.g., /services.html
+                pageTitle = `${targetIdOrPath.replace('.html', '').charAt(0).toUpperCase() + targetIdOrPath.replace('.html', '').slice(1)} Page`;
+                eventLabel = `External Nav: ${targetIdOrPath}`;
+            }
+
+            window.dataLayer.push({
+                'event': 'navigation_click',
+                'event_category': 'Navigation',
+                'event_action': 'Click',
+                'event_label': eventLabel,
+                'page_path': pagePath,
+                'page_title': pageTitle
+            });
+            console.log(`GTM: Navigation Click Tracked - Type: ${navType}, Target: ${targetIdOrPath}`);
+        }
 
         /**
          * Tracks CTA clicks.
@@ -111,14 +215,20 @@
                 'specific_cta_event': eventName // More specific identifier if needed
             });
             console.log(`GTM: Click Tracked - Event: cta_click, Label: ${ctaLabel}`);
+            // If the CTA is an internal anchor, let browser handle smooth scroll if CSS `scroll-behavior: smooth` is set
+            // or perform a manual smooth scroll:
+            if (event.target.tagName === 'A' && event.target.hash) {
+                event.preventDefault(); // Prevent default instant jump
+                document.querySelector(event.target.hash).scrollIntoView({ behavior: 'smooth' });
+            }
         }
 
         /**
          * Tracks form submissions.
-         * Prevents default form submission for demonstration.
          * @param {Event} event - The form submission event.
          */
         function trackFormSubmission(event) {
+            // This function is primarily for the contact page, but included for completeness.
             event.preventDefault(); // Prevent actual form submission for demo
             window.dataLayer.push({
                 'event': 'form_submission',
@@ -127,11 +237,6 @@
                 'event_label': 'Contact Form'
             });
             console.log("GTM: Form Submission Tracked - Event: form_submission");
-
-            // Optionally, show a success message or clear the form
-            // Replaced alert() with a custom modal/message box logic as per instructions
-            displayMessage('Thank you for your message! We will get back to you soon.');
-            event.target.reset(); // Reset the form
         }
 
         /**
@@ -150,11 +255,6 @@
                 'file_type': fileType
             });
             console.log(`GTM: Download Tracked - File: ${fileName}, Type: ${fileType}`);
-
-            // In a real scenario, you'd trigger the actual download here
-            // For this demo, the link has a 'download' attribute
-            // event.target.href = 'path/to/your/Agency_Brochure.pdf';
-            // event.target.click(); // Programmatically click to trigger download
         }
 
         // --- Scroll Depth Tracking ---
@@ -168,8 +268,6 @@
             const currentPagePath = window.location.pathname; // Use pathname for multi-page tracking
 
             scrollThresholds.forEach(threshold => {
-                // Track only if current scroll percentage is past the threshold
-                // and it hasn't been tracked for the current page yet
                 if (scrollPercent >= threshold && (!scrollTracked[currentPagePath] || !scrollTracked[currentPagePath][threshold])) {
                     window.dataLayer.push({
                         'event': 'scroll_depth',
@@ -180,7 +278,6 @@
                         'page_at_scroll': currentPagePath
                     });
                     console.log(`GTM: Scroll Depth Tracked - ${threshold}% on ${currentPagePath}`);
-                    // Mark as tracked
                     if (!scrollTracked[currentPagePath]) {
                         scrollTracked[currentPagePath] = {};
                     }
@@ -196,8 +293,11 @@
             scrollTimeout = setTimeout(trackScrollDepth, 200); // Debounce scroll event
         });
 
-        // Initial scroll depth check on page load
-        document.addEventListener('DOMContentLoaded', trackScrollDepth);
+        // Initial calls
+        document.addEventListener('DOMContentLoaded', () => {
+            setActiveNavLink();
+            trackScrollDepth(); // Initial scroll depth check on page load
+        });
 
         // --- Custom Message Box (replacing alert()) ---
         function displayMessage(message) {
