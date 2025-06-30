@@ -130,12 +130,13 @@
         }
 
         /**
-         * Tracks form submissions.
-         * Prevents default form submission for demonstration.
+         * Tracks form submissions and redirects to a thank you page.
          * @param {Event} event - The form submission event.
          */
         function trackFormSubmission(event) {
-            event.preventDefault(); // Prevent actual form submission for demo
+            event.preventDefault(); // Prevent actual form submission for demo (and default browser refresh)
+
+            // Push form submission event to Data Layer
             window.dataLayer.push({
                 'event': 'form_submission',
                 'event_category': 'Lead',
@@ -144,9 +145,8 @@
             });
             console.log("GTM: Form Submission Tracked - Event: form_submission");
 
-            // Optionally, show a success message or clear the form
-            displayMessage('Thank you for your message! We will get back to you soon.');
-            event.target.reset(); // Reset the form
+            // Redirect to thank you page
+            window.location.href = 'thankyou.html';
         }
 
         /**
@@ -213,6 +213,8 @@
         document.addEventListener('DOMContentLoaded', trackScrollDepth);
 
         // --- Custom Message Box (replacing alert()) ---
+        // This function is no longer directly called for form submissions due to redirection,
+        // but kept for other potential uses or consistency if other messages are added.
         function displayMessage(message) {
             const messageBox = document.createElement('div');
             messageBox.style.cssText = `
