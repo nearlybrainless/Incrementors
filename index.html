@@ -1,57 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DigitalX Agency - Growth That Clicks</title>
-
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-TDPZVD58');</script>
-  <!-- End Google Tag Manager -->
-
-  <style>
-    body { font-family: Arial; margin: 0; padding: 0; }
-    header, footer { background: #111; color: #fff; text-align: center; padding: 1rem; }
-    .hero { padding: 5rem; text-align: center; background: #f3f3f3; }
-    .hero button { padding: 1rem 2rem; font-size: 1.2rem; cursor: pointer; }
-    nav a { margin: 0 1rem; color: white; text-decoration: none; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Marketing Agency - Home</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Light background */
+            color: #333;
+        }
+        /* Custom styles for active navigation link */
+        .nav-link.active {
+            @apply text-blue-600 border-b-2 border-blue-600;
+        }
+    </style>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TDPZVD58');</script>
+    <!-- End Google Tag Manager -->
 </head>
-<body>
+<body class="min-h-screen flex flex-col">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletmanager.com/ns.html?id=GTM-TDPZVD58"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TDPZVD58"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-md py-4">
+        <nav class="container mx-auto px-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-gray-800">
+                Your Agency
+            </a>
+            <ul class="flex space-x-6">
+                <li><a href="index.html" class="nav-link text-gray-600 hover:text-blue-600 py-2 rounded-md transition duration-300 ease-in-out font-medium">Home</a></li>
+                <li><a href="services.html" class="nav-link text-gray-600 hover:text-blue-600 py-2 rounded-md transition duration-300 ease-in-out font-medium">Services</a></li>
+                <li><a href="contact.html" class="nav-link text-gray-600 hover:text-blue-600 py-2 rounded-md transition duration-300 ease-in-out font-medium">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<header>
-  <h1>DigitalX Agency</h1>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+    <!-- Main Content Area - Landing Page Section -->
+    <main class="flex-grow">
+        <section id="landing-page" class="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-20 md:py-32 flex items-center justify-center text-center">
+            <div class="container mx-auto px-4">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 animate-fade-in-down">
+                    Ignite Your Digital Presence
+                </h1>
+                <p class="text-lg md:text-xl mb-10 max-w-2xl mx-auto opacity-90 animate-fade-in-up">
+                    We're a full-service digital marketing agency dedicated to helping businesses thrive online.
+                </p>
+                <a href="services.html" class="bg-white text-blue-600 px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-gray-100 transition duration-300 ease-in-out transform hover:scale-105 cta-button"
+                   onclick="trackClick('hero_cta_click', 'Learn More Button', event);">
+                    Learn More About Our Services
+                </a>
+            </div>
+        </section>
+    </main>
 
-<section class="hero">
-  <h2>We Scale Brands. Digitally.</h2>
-  <p>From SEO to Paid Ads, we help you grow where it counts.</p>
-  <button class="cta-btn" data-cta="Home Hero CTA">Let’s Talk</button>
-</section>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-auto">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2023 Your Digital Marketing Agency. All rights reserved.</p>
+        </div>
+    </footer>
 
-<section>
-  <h3 style="text-align:center;">Download Our Brochure</h3>
-  <p style="text-align:center;">
-    <a href="brochure.pdf" download class="download-link">📄 Download PDF</a>
-  </p>
-</section>
+    <script>
+        // Data Layer is defined by GTM snippet, but good to have a fallback
+        window.dataLayer = window.dataLayer || [];
 
-<footer>
-  <p>© 2025 DigitalX Agency</p>
-</footer>
+        // Function to set the active navigation link based on the current page
+        function setActiveNavLink() {
+            const path = window.location.pathname;
+            const filename = path.substring(path.lastIndexOf('/') + 1);
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === filename || (filename === '' && link.getAttribute('href') === 'index.html')) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // Initialize active nav link on load
+        document.addEventListener('DOMContentLoaded', setActiveNavLink);
+
+
+        // --- GTM Tracking Functions ---
+
+        /**
+         * Tracks CTA clicks.
+         * @param {string} eventName - The specific event name (e.g., 'hero_cta_click').
+         * @param {string} ctaLabel - A descriptive label for the clicked CTA.
+         * @param {Event} event - The click event.
+         */
+        function trackClick(eventName, ctaLabel, event) {
+            window.dataLayer.push({
+                'event': 'cta_click', // Universal event for GTM trigger
+                'event_category': 'Engagement',
+                'event_action': 'Click',
+                'event_label': ctaLabel,
+                'specific_cta_event': eventName // More specific identifier if needed
+            });
+            console.log(`GTM: Click Tracked - Event: cta_click, Label: ${ctaLabel}`);
+        }
+
+        /**
+         * Tracks form submissions.
+         * Prevents default form submission for demonstration.
+         * @param {Event} event - The form submission event.
+         */
+        function trackFormSubmission(event) {
+            event.preventDefault(); // Prevent actual form submission for demo
+            window.dataLayer.push({
+                'event': 'form_submission',
+                'event_category': 'Lead',
+                'event_action': 'Submit',
+                'event_label': 'Contact Form'
+            });
+            console.log("GTM: Form Submission Tracked - Event: form_submission");
+
+            // Optionally, show a success message or clear the form
+            // Replaced alert() with a custom modal/message box logic as per instructions
+            displayMessage('Thank you for your message! We will get back to you soon.');
+            event.target.reset(); // Reset the form
+        }
+
+        /**
+         * Tracks file downloads.
+         * @param {string} fileName - The name of the downloaded file.
+         * @param {string} fileType - The type of the file (e.g., 'PDF', 'DOCX').
+         * @param {Event} event - The click event.
+         */
+        function trackDownload(fileName, fileType, event) {
+            window.dataLayer.push({
+                'event': 'file_download',
+                'event_category': 'Engagement',
+                'event_action': 'Download',
+                'event_label': `${fileName} (${fileType})`,
+                'file_name': fileName,
+                'file_type': fileType
+            });
+            console.log(`GTM: Download Tracked - File: ${fileName}, Type: ${fileType}`);
+
+            // In a real scenario, you'd trigger the actual download here
+            // For this demo, the link has a 'download' attribute
+            // event.target.href = 'path/to/your/Agency_Brochure.pdf';
+            // event.target.click(); // Programmatically click to trigger download
+        }
+
+        // --- Scroll Depth Tracking ---
+        const scrollThresholds = [25, 50, 75, 90]; // Percentages to track
+        const scrollTracked = {}; // To store which percentages have been tracked per page
+
+        function trackScrollDepth() {
+            const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrolled = window.scrollY;
+            const scrollPercent = (scrolled / pageHeight) * 100;
+            const currentPagePath = window.location.pathname; // Use pathname for multi-page tracking
+
+            scrollThresholds.forEach(threshold => {
+                // Track only if current scroll percentage is past the threshold
+                // and it hasn't been tracked for the current page yet
+                if (scrollPercent >= threshold && (!scrollTracked[currentPagePath] || !scrollTracked[currentPagePath][threshold])) {
+                    window.dataLayer.push({
+                        'event': 'scroll_depth',
+                        'event_category': 'Engagement',
+                        'event_action': 'Scroll',
+                        'event_label': `${threshold} Percent Scrolled`,
+                        'scroll_percentage': threshold,
+                        'page_at_scroll': currentPagePath
+                    });
+                    console.log(`GTM: Scroll Depth Tracked - ${threshold}% on ${currentPagePath}`);
+                    // Mark as tracked
+                    if (!scrollTracked[currentPagePath]) {
+                        scrollTracked[currentPagePath] = {};
+                    }
+                    scrollTracked[currentPagePath][threshold] = true;
+                }
+            });
+        }
+
+        // Listen for scroll events
+        let scrollTimeout;
+        window.addEventListener('scroll', () => {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(trackScrollDepth, 200); // Debounce scroll event
+        });
+
+        // Initial scroll depth check on page load
+        document.addEventListener('DOMContentLoaded', trackScrollDepth);
+
+        // --- Custom Message Box (replacing alert()) ---
+        function displayMessage(message) {
+            const messageBox = document.createElement('div');
+            messageBox.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: white;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                z-index: 1000;
+                text-align: center;
+                max-width: 90%;
+                font-family: 'Inter', sans-serif;
+                color: #333;
+            `;
+            messageBox.innerHTML = `
+                <p class="text-lg mb-4">${message}</p>
+                <button class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition duration-300 ease-in-out" onclick="this.parentNode.remove()">
+                    OK
+                </button>
+            `;
+            document.body.appendChild(messageBox);
+        }
+    </script>
 </body>
 </html>
